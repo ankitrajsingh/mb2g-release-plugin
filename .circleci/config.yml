@@ -29,6 +29,7 @@ jobs:
                   paths:
                       - ~/.m2
                   key: v1-dependencies-{{ checksum "pom.xml" }}
-
+            - run: git config --global user.email "ankitpulkit.raj@gmail.com"
+            - run: git config --global user.name "Your Circel CI Build"
             - run: mvn --batch-mode release:prepare release:perform -s .circleci/settings.xml
 
